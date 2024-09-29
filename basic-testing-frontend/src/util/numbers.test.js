@@ -9,16 +9,23 @@ it('should transform a string number to number of type number', () => {
   expect(result).toBeTypeOf('number');
 });
 
-it('should yield NaN for non-transformable values', () => {
-  const invalidValue = 'invalid';
+it('should transform a string number to number', () => {
+  const input = '2';
 
-  const result = transformToNumber(invalidValue);
+  const result = transformToNumber(input);
 
-  expect(result).toBeNaN();
+  expect(result).toBe(+input);
 });
 
-it('should yield NaN if no value is passed into the function', () => {
-  const result = transformToNumber();
+it('should yield NaN for non-transformable values', () => {
+  const invalidValue = 'invalid';
+  const invalidValue2 = {};
+
+  const result = transformToNumber(invalidValue);
+  const result2 = transformToNumber(invalidValue2);
+  const result3 = transformToNumber();
 
   expect(result).toBeNaN();
+  expect(result2).toBeNaN();
+  expect(result3).toBeNaN();
 });
