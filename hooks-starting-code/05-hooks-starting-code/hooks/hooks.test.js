@@ -20,7 +20,7 @@ afterAll(() => {
   console.log('afterAll()');
 });
 
-describe().concurrent() // uses to add concurrent whit all it functions inside
+//describe().concurrent() // uses to add concurrent in all it functions inside
 
 it.concurrent('should update the email', () => {
   const newTestEmail = 'test2@test.com';
